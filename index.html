@@ -40,15 +40,15 @@
             <h3>Select your weapon:</h3>
         </div>
         <div class="weapon-options">
-            <div class="weapon" id="rock"><img src="images/rock.png" alt="Rock"></div>
-            <div class="weapon"><img src="images/toilet-paper.png" alt="Paper"></div>
-            <div class="weapon"><img src="images/scissors.png" alt="Scissors"></div>
+            <div class="weapon" id="Rock" onclick="reply_click(this.id)"><img src="images/rock.png" alt="Rock"></div>
+            <div class="weapon" id="Paper" onclick="reply_click(this.id)"><img src="images/toilet-paper.png" alt="Paper"></div>
+            <div class="weapon" id="Scissors" onclick="reply_click(this.id)"><img src="images/scissors.png" alt="Scissors"></div>
         </div>
         <div class="fight">
             <div class="fight-result"><img src="images/gamer.png" alt="Gamer"></div>
-            <div class="fight-result-score">2</div>
+            <div class="fight-result-score" id="human-score">0</div>
             <div class="fight-result">vs</div>
-            <div class="fight-result-score">4</div>
+            <div class="fight-result-score" id="ai-score">0</div>
             <div class="fight-result"><img src="images/ai.png" alt="AI"></div>
         </div>         
     </div>
@@ -82,7 +82,8 @@
     <!--<a href="https://www.flaticon.com/free-icons/gamer" title="gamer icons">Gamer icons created by Freepik - Flaticon</a>-->
     <!--<a href="https://www.flaticon.com/free-icons/robot" title="robot icons">Robot icons created by Freepik - Flaticon</a>-->
 </body>
-<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+<!--<script type="text/javascript" src="menu.js"></script>-->
 <script>
     const toggleButton = document.getElementById('toggle-button');
     const navlist = document.getElementById('navi-list');

@@ -1,5 +1,4 @@
-const rockWeapon = document.getElementById('rock');
-
-    rockWeapon.addEventListener('click',() => {
-        alert('Rock');
-    })
+function reply_click(clicked_id)
+  {
+      alert(clicked_id);
+  }
