@@ -6,10 +6,13 @@ let result;
 let humanScore = 0;
 let aiScore = 0;
 let finalScore = 0;
+let flag = 0;
 
 const rockWeapon = document.getElementById('rock');
-        const paperWeapon = document.getElementById('paper');
-        const scissorsWeapon = document.getElementById('scirssors');
+const paperWeapon = document.getElementById('paper');
+const scissorsWeapon = document.getElementById('scirssors');
+const modal = document.getElementById('modal');
+const overlay = document.getElementById('overlay');
 
 //Select a random option from the array "Options"
 function randomSelection(options){
@@ -61,28 +64,63 @@ const comparison = function(mySelection, aiSelection){
     
     }
 
+    document.getElementById('messages').innerHTML = `${result}`;
+
     //if (aiScore > humanScore) {finalScore = "AI won the game!"}
     //else if (aiScore < humanScore) {finalScore = "Human won the game"}
     //else {finalScore = "It's a tie this time!"} 
-
-   
 };
 
 function reply_click(clicked_id)
   {
-    
-    aiSelection = randomSelection(options);
-    mySelection = clicked_id;
-    comparison (mySelection, aiSelection);
-    document.getElementById('human-score').innerHTML = `${humanScore}`;
-    document.getElementById('ai-score').innerHTML = `${aiScore}`;
-    
-    if (aiScore == 5 || humanScore == 5) {
-        if (aiScore > humanScore) {alert("AI won the game!")}
-        else if (aiScore < humanScore) {alert("Human won the game")}
-        else {alert("It's a tie this time!")} 
+    if (flag == 0) {
+        aiSelection = randomSelection(options);
+        mySelection = clicked_id;
+        comparison (mySelection, aiSelection);
+        document.getElementById('human-score').innerHTML = `${humanScore}`;
+        document.getElementById('ai-score').innerHTML = `${aiScore}`;
+        
+        if (aiScore == 5 || humanScore == 5) {
+            flag = 1;
+            if (aiScore > humanScore) 
+            {
+                document.getElementById('messages').innerHTML = "AI won the game!";
+                openModal(modal);
+            }
+            else {
+                document.getElementById('messages').innerHTML = "Human won the game!";
+                openModal(modal2);
+            }
+        }
+    } else {
+        openModal(modal3);
     }
   }
+
+function openModal(modal) {
+    if (modal ==  null) return
+    modal.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeModal(modal) {
+    if (modal ==  null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+function reset(modal) {
+    if (modal ==  null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+    humanScore = 0;
+    aiScore = 0;
+    finalScore = 0;
+    flag = 0;
+    document.getElementById('messages').innerHTML = "";
+    document.getElementById('human-score').innerHTML = 0;
+    document.getElementById('ai-score').innerHTML = 0;
+}
 
 //Calling functions
 //aiSelection = randomSelection(options);

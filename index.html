@@ -12,21 +12,21 @@
 <body>
     
     <nav class="navbar">
-        <div>
-            <a href="#"><img class="primary-icon" src="/images/consola-de-juego.png"</a>
-        </div>
+        <!--<div>
+            <a href="#"><img class="primary-icon" src="images/consola-de-juego.png" />Let's play!</a>
+        </div>-->
         <ul class="nav-list" id="navi-list">
             <li class="list-item">
-                <a href="#">Our Service</a>
+                <a href="#"></a>
             </li>
             <li class="list-item">
-                <a href="#">About Us</a>
+                <a href="#"></a>
             </li>
             <li class="list-item">
-                <a href="#">Contact</a>
+                <a href="#"></a>
             </li>
             <li class="list-item">
-                <a href="#">Support</a>
+                <a href="#"></a>
             </li>
         </ul>
         <div class="menu" id="toggle-button">
@@ -37,6 +37,9 @@
     </nav>
     <div class="container">
         <div>
+            <h1>Rock-Paper-Scissors</h1>
+        </div>
+        <div>
             <h3>Select your weapon:</h3>
         </div>
         <div class="weapon-options">
@@ -44,14 +47,44 @@
             <div class="weapon" id="Paper" onclick="reply_click(this.id)"><img src="images/toilet-paper.png" alt="Paper"></div>
             <div class="weapon" id="Scissors" onclick="reply_click(this.id)"><img src="images/scissors.png" alt="Scissors"></div>
         </div>
+        <div id="messages" class="messages"></div>   
         <div class="fight">
             <div class="fight-result"><img src="images/gamer.png" alt="Gamer"></div>
             <div class="fight-result-score" id="human-score">0</div>
             <div class="fight-result">vs</div>
             <div class="fight-result-score" id="ai-score">0</div>
             <div class="fight-result"><img src="images/ai.png" alt="AI"></div>
-        </div>         
+        </div>
+              
     </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+                <div class="title">AI wins!</div>
+                <button class="close-button" onclick="reset(modal)">&times;</button>
+        </div>
+        <div class="modal-body">
+            <img src="images/ai.png" />
+            <div class="modal-body-text">
+                <div> Sorry insignificant human. It seems that I won!</div>
+                <button class="close-button-inside" onclick="reset(modal)">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal2">
+        <div class="modal-header">
+                <div class="title">Human wins!</div>
+                <button class="close-button" onclick="reset(modal2)">&times;</button>
+        </div>
+        <div class="modal-body">
+            <img src="images/gamer.png" />
+            <div class="modal-body-text">
+                <div> No one can overcome a gamer. I won!</div>
+                <button class="close-button-inside" onclick="reset(modal2)">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
     <footer>
         <section class="ft-social">
             <ul class="ft-social-list">
@@ -67,9 +100,8 @@
           <!-- Footer legal -->
           <section class="ft-legal">
             <ul class="ft-legal-list">
-              <li><a href="#">Terms &amp; Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li>&copy; 2019 Copyright Nowrap Inc.</li>
+              <li></li>
+              <li>&copy; 2022 Copyright - Create by: JC</li>
             </ul>
           </section>
         </footer>
