@@ -7,12 +7,19 @@ let humanScore = 0;
 let aiScore = 0;
 let finalScore = 0;
 let flag = 0;
+let modalToOpen = "";
 
-const rockWeapon = document.getElementById('rock');
-const paperWeapon = document.getElementById('paper');
-const scissorsWeapon = document.getElementById('scirssors');
+const rockWeapon = document.getElementById('Rock');
+const paperWeapon = document.getElementById('Paper');
+const scissorsWeapon = document.getElementById('Scissors');
 const modal = document.getElementById('modal');
+const modal2 = document.getElementById('modal2');
 const overlay = document.getElementById('overlay');
+const resetBtn = document.querySelectorAll('.close-button-inside');
+const closeBtn = document.querySelectorAll('.close-button');
+//const modal3 = document.getElementById('modal3');
+
+
 
 //Select a random option from the array "Options"
 function randomSelection(options){
@@ -86,14 +93,16 @@ function reply_click(clicked_id)
             {
                 document.getElementById('messages').innerHTML = "AI won the game!";
                 openModal(modal);
+                modalToOpen = modal;
             }
             else {
                 document.getElementById('messages').innerHTML = "Human won the game!";
                 openModal(modal2);
+                modalToOpen = modal2;
             }
         }
     } else {
-        openModal(modal3);
+        openModal(modalToOpen);
     }
   }
 
@@ -122,7 +131,42 @@ function reset(modal) {
     document.getElementById('ai-score').innerHTML = 0;
 }
 
-//Calling functions
+// Calling functions for buttons
+
+/* const rockWeapon = document.getElementById('rock');
+const paperWeapon = document.getElementById('paper');
+const scissorsWeapon = document.getElementById('scirssors');
+const modal = document.getElementById('modal');
+const overlay = document.getElementById('overlay'); */
+
+rockWeapon.addEventListener('click', function() {
+    reply_click(rockWeapon.id);
+});
+
+paperWeapon.addEventListener('click', function() {
+    reply_click(paperWeapon.id);
+});
+
+scissorsWeapon.addEventListener('click', function() {
+    reply_click(scissorsWeapon.id);
+});
+
+resetBtn[0].addEventListener('click', function() {
+    reset(modal);
+});
+
+closeBtn[0].addEventListener('click', function() {
+    closeModal(modal);    
+});
+
+resetBtn[1].addEventListener('click', function() {
+    reset(modal2);
+});
+
+closeBtn[1].addEventListener('click', function() {
+    closeModal(modal2);    
+});
+
 //aiSelection = randomSelection(options);
 //game(aiSelection);
 //console.log(`Final score! Humans: ${humanScore} AI: ${aiScore}. ${finalScore}`);

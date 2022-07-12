@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors-Lizard-Spock</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <!--<script src="scripts.js"></script>-->
 
@@ -43,9 +44,9 @@
             <h3>Select your weapon:</h3>
         </div>
         <div class="weapon-options">
-            <div class="weapon" id="Rock" onclick="reply_click(this.id)"><img src="images/rock.png" alt="Rock"></div>
-            <div class="weapon" id="Paper" onclick="reply_click(this.id)"><img src="images/toilet-paper.png" alt="Paper"></div>
-            <div class="weapon" id="Scissors" onclick="reply_click(this.id)"><img src="images/scissors.png" alt="Scissors"></div>
+            <div class="weapon" id="Rock"><img src="images/rock.png" alt="Rock"></div>
+            <div class="weapon" id="Paper"><img src="images/toilet-paper.png" alt="Paper"></div>
+            <div class="weapon" id="Scissors"><img src="images/scissors.png" alt="Scissors"></div>
         </div>
         <div id="messages" class="messages"></div>   
         <div class="fight">
@@ -61,26 +62,26 @@
     <div class="modal" id="modal">
         <div class="modal-header">
                 <div class="title">AI wins!</div>
-                <button class="close-button" onclick="reset(modal)">&times;</button>
+                <button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
             <img src="images/ai.png" />
             <div class="modal-body-text">
                 <div> Sorry insignificant human. It seems that I won!</div>
-                <button class="close-button-inside" onclick="reset(modal)">Reset</button>
+                <button class="close-button-inside">Reset</button>
             </div>
         </div>
     </div>
     <div class="modal" id="modal2">
         <div class="modal-header">
                 <div class="title">Human wins!</div>
-                <button class="close-button" onclick="reset(modal2)">&times;</button>
+                <button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
             <img src="images/gamer.png" />
             <div class="modal-body-text">
                 <div> No one can overcome a gamer. I won!</div>
-                <button class="close-button-inside" onclick="reset(modal2)">Reset</button>
+                <button class="close-button-inside">Reset</button>
             </div>
         </div>
     </div>
@@ -114,7 +115,7 @@
     <!--<a href="https://www.flaticon.com/free-icons/gamer" title="gamer icons">Gamer icons created by Freepik - Flaticon</a>-->
     <!--<a href="https://www.flaticon.com/free-icons/robot" title="robot icons">Robot icons created by Freepik - Flaticon</a>-->
 </body>
-<script type="text/javascript" src="scripts.js"></script>
+<!-- <script type="text/javascript" src="scripts.js"></script> -->
 <!--<script type="text/javascript" src="menu.js"></script>-->
 <script>
     const toggleButton = document.getElementById('toggle-button');
